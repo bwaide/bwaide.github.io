@@ -18,21 +18,45 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Your awesome title
+title: FreeYourData Alternatives
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Discover European alternatives to US-based SaaS and Cloud services. 
+  Our Risk Assessment Calculator helps you identify privacy-friendly options
+  based on your specific risk profile and break free from digital dependency.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+url: "https://alternatives.freeyourdata.eu" # the base hostname & protocol for your site
+host: 0.0.0.0 # Allow connections from all IP addresses during development
+twitter_username: freeyourdata
+github_username:  freeyourdata
 
 # Build settings
 theme: minima
 plugins:
   - jekyll-feed
+
+# Collections
+collections:
+  alternatives:
+    output: true
+    permalink: /alternatives/:path/
+  categories:
+    output: true
+    permalink: /categories/:path/
+    
+permalink: pretty
+    
+defaults:
+  - scope:
+      path: ""
+      type: "alternatives"
+    values:
+      layout: "alternative"
+  - scope:
+      path: ""
+      type: "categories"
+    values:
+      layout: "category"
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -42,14 +66,18 @@ plugins:
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - package.json
+  - package-lock.json
+  - postcss.config.js
+  - tailwind.config.js
+  - README.md
+  - CLAUDE.md

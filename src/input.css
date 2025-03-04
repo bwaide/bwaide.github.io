@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply antialiased text-gray-800;
+  }
+
+  h1 {
+    @apply text-3xl font-bold mb-4 text-gray-900;
+  }
+
+  h2 {
+    @apply text-2xl font-semibold mb-3 text-gray-900;
+  }
+
+  h3 {
+    @apply text-xl font-semibold mb-2 text-gray-900;
+  }
+
+  p {
+    @apply mb-4;
+  }
+
+  ul {
+    @apply list-disc pl-5 mb-4;
+  }
+}
+
+@layer components {
+  /* Header components */
+  .site-header {
+    @apply bg-white shadow-md py-4;
+  }
+
+  .page-link {
+    @apply px-4 py-2 font-medium text-gray-700 hover:text-primary hover:no-underline;
+  }
+
+  /* Card components */
+  .category-card {
+    @apply bg-slate-50 rounded-lg p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1;
+  }
+
+  .alternative-card {
+    @apply bg-slate-50 rounded-lg p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1;
+  }
+
+  /* Risk indicator badges */
+  .risk-indicator {
+    @apply inline-block px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .risk-low {
+    @apply bg-green-100 text-green-800;
+  }
+
+  .risk-medium {
+    @apply bg-yellow-100 text-yellow-800;
+  }
+
+  .risk-high {
+    @apply bg-red-100 text-red-800;
+  }
+
+  /* Buttons and links */
+  .read-more {
+    @apply inline-block mt-3 text-primary font-medium hover:text-primary-dark hover:underline;
+  }
+
+  .back-link {
+    @apply inline-block mt-6 text-primary font-medium hover:text-primary-dark hover:underline;
+  }
+}
+
+/* Animation for modal */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-400;
+}

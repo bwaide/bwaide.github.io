@@ -1,0 +1,68 @@
+---
+layout: default
+---
+{% include head-alternative.html %}
+<article class="max-w-4xl mx-auto">
+  <header class="mb-8">
+    <h1 class="text-4xl font-bold mb-4">{{ page.title }}</h1>
+    <div class="flex flex-wrap gap-4 mb-6">
+      <span class="inline-flex items-center px-3 py-1 rounded-full bg-slate-100 text-sm font-medium text-slate-800">
+        Category: {{ page.category }}
+      </span>
+      <span class="risk-indicator risk-{{ page.risk_level | downcase }}">
+        Risk Level: {{ page.risk_level }}
+      </span>
+    </div>
+  </header>
+
+  <div class="max-w-none">
+    {{ content }}
+
+    {% if page.features %}
+    <div class="my-8 pt-6 border-t border-slate-200">
+      <h2 class="text-2xl font-semibold mb-4">Features</h2>
+      <ul class="space-y-2">
+        {% for feature in page.features %}
+        <li>{{ feature }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    {% if page.pricing %}
+    <div class="my-8 pt-6 border-t border-slate-200">
+      <h2 class="text-2xl font-semibold mb-4">Pricing</h2>
+      <p>{{ page.pricing }}</p>
+    </div>
+    {% endif %}
+
+    {% if page.compliance %}
+    <div class="my-8 pt-6 border-t border-slate-200">
+      <h2 class="text-2xl font-semibold mb-4">Compliance</h2>
+      <ul class="space-y-2">
+        {% for compliance in page.compliance %}
+        <li>{{ compliance }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    {% if page.official_website %}
+    <div class="my-8 pt-6 border-t border-slate-200">
+      <h2 class="text-2xl font-semibold mb-4">Official Website</h2>
+      <a href="{{ page.official_website }}" target="_blank" rel="noopener" class="text-primary hover:text-primary-dark hover:underline">{{ page.official_website }}</a>
+    </div>
+    {% endif %}
+  </div>
+
+  <div class="mt-10 pt-6 border-t border-slate-200">
+    <a href="{% include category-link.html category=page.category %}" class="back-link">
+      <span class="inline-flex items-center">
+        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+        </svg>
+        Back to {{ page.category }} alternatives
+      </span>
+    </a>
+  </div>
+</article>

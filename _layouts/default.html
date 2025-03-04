@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+<body class="flex flex-col min-h-screen">
+  <!-- Header -->
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <!-- Logo and site title - exactly as in main site -->
+        <div class="flex items-center">
+          <div class="bg-gradient-to-br from-blue-600 to-indigo-700 p-2 rounded-lg shadow-md">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6 text-white">
+              <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
+            </svg>
+          </div>
+          <div class="ml-3">
+            <h1 class="text-xl font-bold text-gray-900 tracking-tight" style="margin: 0; padding: 0; line-height: 1;">Free your Data</h1>
+            <p class="text-sm text-indigo-600 font-medium" style="margin: 0; padding: 0; ">Your Digital Risk, Revealed</p>
+          </div>
+        </div>
+        
+        <!-- Navigation links -->
+        <nav class="site-nav">
+          <!-- Mobile menu button -->
+          <div class="md:hidden">
+            <button type="button" id="menu-toggle" class="text-gray-600 hover:text-primary focus:outline-none">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+          
+          <!-- Desktop menu -->
+          <div class="hidden md:flex items-center space-x-1">
+            <a class="page-link" href="{{ "/" | relative_url }}">Home</a>
+            <a class="page-link" href="{{ "/categories" | relative_url }}">Categories</a>
+            <a class="page-link" href="{{ "/about" | relative_url }}">About</a>
+            <a class="page-link" href="https://freeyourdata.eu" target="_blank" rel="noopener">Risk Calculator</a>
+          </div>
+          
+          <!-- Mobile menu (hidden by default) -->
+          <div id="mobile-menu" class="absolute top-16 right-4 bg-white shadow-lg rounded-lg p-4 hidden z-50 md:hidden animate-fadeIn">
+            <div class="flex flex-col space-y-2">
+              <a class="page-link" href="{{ "/" | relative_url }}">Home</a>
+              <a class="page-link" href="{{ "/categories" | relative_url }}">Categories</a>
+              <a class="page-link" href="{{ "/about" | relative_url }}">About</a>
+              <a class="page-link" href="https://freeyourdata.eu" target="_blank" rel="noopener">Risk Calculator</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main class="flex-grow py-10">
+    <div class="container mx-auto px-4 max-w-7xl">
+      {{ content }}
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex flex-col items-center justify-center text-center">
+        <div class="flex items-center mb-4">
+          <div class="bg-gradient-to-br from-blue-600 to-indigo-700 p-2 rounded-lg shadow-md">
+            <!-- Shield icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-white">
+              <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
+            </svg>
+          </div>
+          <span class="ml-3 text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-300">Free your Data</span>
+        </div>
+        <p class="text-indigo-300 mb-6 font-medium">Your Digital Risk, Revealed</p>
+        
+        <!-- Links -->
+        <div class="flex flex-wrap justify-center gap-6 mb-8">
+          <a href="https://freeyourdata.eu/" class="text-gray-400 hover:text-white text-sm transition-colors duration-200 border-b border-transparent hover:border-white pb-1">Risk Calculator</a>
+          <a href="{{ "/about" | relative_url }}" class="text-gray-400 hover:text-white text-sm transition-colors duration-200 border-b border-transparent hover:border-white pb-1">About</a>
+          <a href="https://net-positive-ventures.de/impressum" target="_blank" class="text-gray-400 hover:text-white text-sm transition-colors duration-200 border-b border-transparent hover:border-white pb-1">Imprint</a>
+          <a href="https://net-positive-ventures.de/datenschutz" target="_blank" class="text-gray-400 hover:text-white text-sm transition-colors duration-200 border-b border-transparent hover:border-white pb-1">Data Policy</a>
+        </div>
+        
+        <!-- Copyright -->
+        <p class="text-sm text-gray-500">© {{ site.time | date: '%Y' }} <a href="https://net-positive-ventures.de/" target="_blank" class="hover:text-gray-400 transition-colors duration-200">net positive ventures</a>. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="{{ "/assets/js/main.js" | relative_url }}"></script>
+  <script>
+    // Mobile menu toggle
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.remove('hidden');
+      } else {
+        mobileMenu.classList.add('hidden');
+      }
+    });
+  </script>
+</body>
+</html>

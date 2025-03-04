@@ -1,0 +1,43 @@
+---
+layout: default
+---
+{% include head-category.html %}
+<div>
+  <header class="mb-10 text-center">
+    <h1 class="text-4xl font-bold mb-4">{{ page.title }}</h1>
+    <p class="text-xl text-gray-600 max-w-3xl mx-auto">{{ page.description }}</p>
+  </header>
+
+  <div class="max-w-none mb-12">
+    {{ content }}
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+    {% assign alternatives = site.alternatives | where: "category", page.category_name %}
+    {% for alternative in alternatives %}
+    <div class="alternative-card flex flex-col h-full">
+      <h2 class="text-2xl font-semibold mb-2">
+        <a href="{{ alternative.url | relative_url }}" class="text-gray-900 hover:text-primary">{{ alternative.title }}</a>
+      </h2>
+      <div class="mb-3">
+        <span class="risk-indicator risk-{{ alternative.risk_level | downcase }}">
+          Risk Level: {{ alternative.risk_level }}
+        </span>
+      </div>
+      <p class="text-gray-600 mb-4 flex-grow">{{ alternative.excerpt | strip_html | truncate: 120 }}</p>
+      <a href="{{ alternative.url | relative_url }}" class="read-more mt-auto">View details →</a>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="text-center mt-10 pt-6 border-t border-slate-200">
+    <a href="{{ site.baseurl }}/categories" class="back-link">
+      <span class="inline-flex items-center">
+        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+        </svg>
+        Back to all categories
+      </span>
+    </a>
+  </div>
+</div>
