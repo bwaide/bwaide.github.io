@@ -1,6 +1,6 @@
 ---
 layout: category
-title: Music & Media Streaming Alternatives
+title: Other Media Streaming Alternatives
 category_name: Other Media Streaming
 description: "European alternatives to US-based media services like Spotify, Apple Music, Audible, and Kindle. These services offer music, audiobooks, and e-books while keeping your media consumption data in the EU."
 ---

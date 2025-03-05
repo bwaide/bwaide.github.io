@@ -1,7 +1,7 @@
 ---
 layout: category
 title: E-Commerce Alternatives
-category_name: E-Commerce
+category_name: ECommerce
 description: "European alternatives to US-based online shopping platforms like Amazon and eBay. These services offer online shopping while keeping your purchasing data and preferences in the EU."
 ---
 

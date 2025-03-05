@@ -1,7 +1,7 @@
 ---
 layout: category
 title: Movie & Series Streaming Alternatives
-category_name: Movies & Series Streaming
+category_name: Movie Streaming
 description: "European alternatives to US-based streaming services like Netflix, Amazon Prime Video, and Disney+. These services offer movies and TV shows while keeping your viewing data and preferences in the EU."
 ---
 
